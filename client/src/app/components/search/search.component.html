@@ -1,0 +1,48 @@
+<h1>Search Spotify</h1>
+<!--TODO: bind input's model to searchString-->
+<input id = searchInput>
+<!--TODO: bind select's model to searchCategory-->
+<select id = "selectCategory">
+	<!--TODO: loop over searchCategories to create dropdown options-->
+	<!--populate body and text value https://www.w3schools.com/tags/att_option_selected.asp-->
+	<option value="{{searchCategories[0]}}" selected={{searchCategories[0]}}>{{searchCategories[0]}}</option>
+	<option value="{{searchCategories[1]}}">{{searchCategories[1]}}</option>
+	<option value="{{searchCategories[2]}}">{{searchCategories[2]}}</option>
+
+</select>
+<!--TODO: Call search function when the button is clicked-->
+<button class="btn btn-light" (click) = "search()">Search</button>
+
+
+
+<!--TODO: Display a carousel component if searching for an artist or album. Bind carousel's resources and give it a static carouselId.-->
+
+<div id="carouselSlide" class = "carouselSlide" *ngIf="resources != null && searchCategory != 'track'">
+	<app-carousel [resources]="resources" [carouselId]="resources[slide].id"></app-carousel>
+	<!-- I wrote this then found out we were supposed to modify the component instead
+	<div class="carousel-inner">
+		<div class="carousel-item active">
+			<a href="/artist/{{resources[slide].id}}" *ngIf="searchCategory == 'artist'">
+				<img src="{{resources[slide].imageURL}}" class="d-block w-100" alt="artist image" target="_blank">
+			</a>
+			<a href="/album/{{resources[slide].id}}" *ngIf="searchCategory == 'album'">
+				<img src="{{resources[slide].imageURL}}" class="d-block w-100" alt="album image" target="_blank">
+			</a>
+		</div>
+	</div>
+
+	<a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide = "prev" (click)="clickPrev()">
+		<span class = "carousel-control-prev-icon" aria-hidden="true"></span>
+		<span class="sr-only">Previous</span>
+	</a>
+	<a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next" (click)="clickNext()">
+		<span class="carousel-control-next-icon" aria-hidden="true"></span>
+		<span class="sr-only">Next</span>
+	</a>-->
+</div>
+
+<!--TODO: Display a track-list component if searching for a track. Bind track-list's tracks.-->
+
+<div *ngIf="searchCategory == 'track' && resources != null">
+	<app-track-list [tracks]="resources" [hideArtist]="false" [hideAlbum]="false"></app-track-list>
+</div>

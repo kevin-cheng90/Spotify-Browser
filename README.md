@@ -2,7 +2,7 @@
 This project utilizes Spotify's API to gather data and create reusable web components displaying information about users, artists, tracks, and albums. 
 
 ## Demo
-Here's a link to the video demo. I've also attatched screenshots from the demo below. 
+Here's a link to the video demo. I've also attatched screenshots from the demo below. <br>
 Link: https://www.youtube.com/watch?v=0nXknp56oJM
 
 ### Initial Page
@@ -39,8 +39,10 @@ The user can view the album's tracks on this page.
 
 ### Search for tracks
 The user can also search for tracks on the front page.
+<br><br>
 ![image](https://user-images.githubusercontent.com/52221230/126969012-6303fb59-b951-4383-9392-ff1b21d804d7.png)
 
 ### Track page
 The track page displays information about a song and displays a button linking to the track on spotify. 
+<br><br>
 ![image](https://user-images.githubusercontent.com/52221230/126968847-fd46f837-65c4-4232-b661-64c5370c780f.png)
